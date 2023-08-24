@@ -27,6 +27,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Import models
-
+import models.chats
 
 migrate = Migrate(app, db)
