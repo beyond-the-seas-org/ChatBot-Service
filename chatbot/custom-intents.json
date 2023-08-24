@@ -1,0 +1,65 @@
+{
+    "intents": [
+      {
+        "tag": "professor_info",
+        "patterns": [
+          "Tell me about Computer Science professors",
+          "Who are some notable professors in Computer Science?",
+          "Can you provide information about CS professors?"
+        ],
+        "responses": [
+          "Sure, we have a number of distinguished professors in Computer Science across the US. Some of them include:",
+          "Of course, here are a few renowned Computer Science professors:"
+        ]
+      },
+      {
+        "tag": "professor_specific",
+        "patterns": [
+          "Tell me about [Professor's Name]",
+          "What do you know about [Professor's Name]?",
+          "Information about [Professor's Name]"
+        ],
+        "responses": [
+          "Certainly! [Professor's Name] is a prominent figure in the field of Computer Science. They specialize in [specific area of expertise], and their contributions include [notable achievements].",
+          "I'm familiar with [Professor's Name]. They're a well-respected Computer Science professor known for [significant contributions], particularly in [research focus]."
+        ]
+      },
+      {
+        "tag": "professor_research",
+        "patterns": [
+          "What is [Professor's Name]'s research focused on?",
+          "Tell me about [Professor's Name]'s research interests",
+          "What does [Professor's Name] study?"
+        ],
+        "responses": [
+          "[Professor's Name] is deeply involved in research related to [research focus]. Their work explores [research themes], aiming to [research goals].",
+          "The research interests of [Professor's Name] lie primarily in [research area]. They're actively engaged in [research activities] to advance our understanding of [research topic]."
+        ]
+      },
+      {
+        "tag": "professor_accomplishments",
+        "patterns": [
+          "What are [Professor's Name]'s notable accomplishments?",
+          "Tell me about [Professor's Name]'s achievements",
+          "[Professor's Name]'s contributions"
+        ],
+        "responses": [
+          "[Professor's Name] has achieved numerous milestones in their career. They've [achievements], and their work on [notable projects] has had a significant impact on [relevant field].",
+          "Among [Professor's Name]'s accomplishments are [major achievements]. Their dedication to [specific contributions] has garnered recognition within the Computer Science community."
+        ]
+      },
+      {
+        "tag": "professor_contact",
+        "patterns": [
+          "How can I contact [Professor's Name]?",
+          "Is there a way to reach [Professor's Name]?",
+          "Contact information for [Professor's Name]"
+        ],
+        "responses": [
+          "You can get in touch with [Professor's Name] by reaching out via email at [email address]. They are generally open to discussing their work and research interests.",
+          "To contact [Professor's Name], you can send an email to [email address]. They often engage in discussions related to their field."
+        ]
+      }
+    ]
+  }
+  
