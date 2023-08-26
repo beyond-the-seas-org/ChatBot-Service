@@ -12,7 +12,7 @@ class ChatsModel(db.Model):
     id = db.Column(db.Integer, primary_key=True,autoincrement=True)
     user_id = db.Column(db.Integer)
     msg_from = db.Column(db.String(100))
-    message = db.Column(db.String(500))
+    message = db.Column(db.String(5000))
     creation_time = db.Column(db.DateTime)
 
     def json(self):

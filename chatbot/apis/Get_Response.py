@@ -9,6 +9,7 @@ from chatbot import db
 from chatbot.models.chatbot_db.chats import ChatsModel
 
 from chatbot.chat import get_response
+from chatbot.chat_gpt import get_response_gpt
 
 class Get_chatbot_respone(Resource):
     @api.doc(responses={200: 'OK', 404: 'Not Found', 500: 'Internal Server Error'})
@@ -17,7 +18,8 @@ class Get_chatbot_respone(Resource):
         user_message = request.json['user_message']
         user_id = request.json['user_id']
         print(user_message)
-        response = get_response(user_message)
+        response = get_response_gpt(user_message)
+        print("Chatbot response: ", response)
         bot_response = {
             "bot_response": response
         }
@@ -50,8 +52,5 @@ class Get_chatbot_respone(Resource):
             print({"message":"exception occured in Get_chatbot_respone"})
             print(e)
             return jsonify({"message":"exception occured in Get_chatbot_respone"})
-
-
-        return jsonify(bot_response)
 
         
