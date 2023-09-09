@@ -4,20 +4,24 @@ import psycopg2, dotenv, os
 from flask_restx import Api
 from flask_cors import CORS
 import subprocess  # Import the subprocess module
+from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
 api = Api(app)
-CORS(app, origins='http://localhost:3000')
+CORS(app, origins='http://127.0.0.1:3000')
 
 dotenv.load_dotenv()
 db_url = os.getenv('BOT_DATABASE_URL')
 
 conn = psycopg2.connect(db_url, sslmode='prefer')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = db_url
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_DATABASE_URI'] = db_url
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+app.config.from_object('chatbot.config.DevelopmentConfig')
 
 db = SQLAlchemy(app)
+jwt = JWTManager(app)
 
 from chatbot.routes import *
 

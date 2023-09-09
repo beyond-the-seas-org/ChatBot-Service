@@ -7,11 +7,19 @@ from chatbot import api
 from chatbot import db
 from chatbot.models.chatbot_db.chats import ChatsModel
 
-from chatbot.chat import get_response
+# from chatbot.chat import get_response
+
+from flask_jwt_extended import jwt_required
+from flask_jwt_extended.exceptions import NoAuthorizationError
+
+@api.errorhandler(NoAuthorizationError)
+def handle_auth_required(e):
+    return {"message": "Authorization token is missing"}, 401
+
 
 class Get_all_chats(Resource):
     @api.doc(responses={200: 'OK', 404: 'Not Found', 500: 'Internal Server Error'})
-
+    @jwt_required()
     def get(self, user_id):
         
         try:
